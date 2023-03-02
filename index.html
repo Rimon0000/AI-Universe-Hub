@@ -9,12 +9,77 @@
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1 class="text-center my-4">AI Universe Hub</h1>
 
     <section class="container">
         <div id="data-container" class="row row-cols-1 row-cols-md-3 g-4">
            
         </div>
+        <div id="see-more" class="text-center d-none ">
+            <button id="btn-see-more" class="btn btn-primary">See More</button>
+        </div>
+    </section>
+
+    <!-- modal  -->
+    <section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 id="data-description" class="card-title">Card title</h5>
+
+                        <div class="row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h6 id="pricing-1"></h6>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h6></h6>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a short card.</p>
+                    </div>
+                  </div>
+                </div> 
+
+             </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     </section>
 
 

@@ -9,8 +9,17 @@ const displayData = (datas) =>{
     // console.log(datas)
     const dataContainer = document.getElementById('data-container')
     dataContainer.innerHTML = '';
+    // Display 6 data only 
+    const seeMore = document.getElementById('see-more');
+    if(datas.length > 6){
+        datas = datas.slice(0, 6);
+        seeMore.classList.remove('d-none')
+    }
+    else{
+        seeMore.classList.add('d-none')
+    }
     datas.forEach(data =>{
-        console.log(data)
+        // console.log(data)
         const dataDiv = document.createElement('div')
     dataDiv.classList.add('col')
     dataDiv.innerHTML = `
@@ -30,33 +39,40 @@ const displayData = (datas) =>{
           <h6><i class="fa-solid fa-calendar-days"></i> ${data.published_in}</h6>
         </div>
         <div>
-        <button class="btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
+        <button onClick="loadDetails('${data.id}')" class="btn-icon" data-bs-toggle="modal" data-bs-target="#detailsModal"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
     `;
     dataContainer.appendChild(dataDiv)
     })
-    
+}
 
-    //Display all phones
-    // phones.forEach(phone =>{
-    //     // console.log(phone)
-    //     const phoneDiv = document.createElement('div')
-    //     phoneDiv.classList.add('col')
-    //     phoneDiv.innerHTML = `
-    //     <div class="card p-4">
-    //       <img src="${phone.image}" class="card-img-top" alt="...">
-    //       <div class="card-body">
-    //         <h5 class="card-title">${phone.phone_name}</h5>
-    //         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    //         <button onClick = "loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phoneDetailModal">Show Details</button>
-    //       </div>
-    //     </div>
-    //     `;
-    //     phonesContainer.appendChild(phoneDiv)
-    // })
+//load details
+const loadDetails =async id =>{
+    // console.log(id)
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`
+    const res = await fetch(url)
+    const data = await res.json()
+    displayDetails(data.data)
+}
+
+const displayDetails = (data) =>{
+    console.log(data)
+    const dataDescription = document.getElementById('data-description')
+    dataDescription.innerHTML = data.description ? data.description: "No Description";
+    const pricing1 = document.getElementById('pricing-1')
+    pricing1.innerHTML = data.pricing ? data.pricing[0].price : "Free of Cost/Basic";
+
+
+
 
 }
+
+//show more
+document.getElementById('btn-see-more').addEventListener('click', function(){
+    // loadData();
+
+})
 
 loadData()
