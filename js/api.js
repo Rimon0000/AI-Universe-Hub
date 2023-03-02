@@ -10,18 +10,28 @@ const displayData = (datas) =>{
     const dataContainer = document.getElementById('data-container')
     dataContainer.innerHTML = '';
     datas.forEach(data =>{
-        // console.log(data)
+        console.log(data)
         const dataDiv = document.createElement('div')
     dataDiv.classList.add('col')
     dataDiv.innerHTML = `
     <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="${data.image}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Features</h5>
+        <ol>
+         <li>${data.features[0]}</li>
+         <li>${data.features[1]}</li>
+         <li>${data.features[2]}</li>
+        </ol>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+      <div class="card-footer d-flex justify-content-between">
+        <div>
+          <h5 class="card-title">${data.name}</h5>
+          <h6><i class="fa-solid fa-calendar-days"></i> ${data.published_in}</h6>
+        </div>
+        <div>
+        <button class="btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
     `;
