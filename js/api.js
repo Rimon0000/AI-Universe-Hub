@@ -19,10 +19,8 @@ const displayData = (datas) =>{
     if( datas.length <= 6){
       //  datas = datas.slice(0, 6);
        seeMore.classList.remove('d-none')
-       console.log('ron')
     }else{
       seeMore.classList.add('d-none')
-      console.log('rimon')
     }
 
     
@@ -68,7 +66,7 @@ const loadDetails =async id =>{
 }
 
 const displayDetails = (data) =>{
-    console.log(data.accuracy.score)
+    console.log(data)
     const dataDescription = document.getElementById('data-description')
     dataDescription.innerHTML = data.description ? data.description: "No Description";
     const pricing1 = document.getElementById('pricing-1')
@@ -99,12 +97,15 @@ const displayDetails = (data) =>{
     <div class="card-body modal-div">
       <h5 class="card-title">${data.input_output_examples[0] ? data.input_output_examples[0].input : "Can you give any example?"}</h5>
       <p class="card-text">${data.input_output_examples[0] ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
-      <button class="btn btn-danger btn-accuracy">${data.accuracy.score * 100}% accuracy</button>
-      
+      <button class="btn btn-danger btn-accuracy ${data.accuracy.score? 'd-block': 'd-none'}">${data.accuracy.score * 100}% accuracy</button>
     </div>
     </div>
     `;
 }
+
+
+//accuracy
+
 
 
 //spinner / loader
