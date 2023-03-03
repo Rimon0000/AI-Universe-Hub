@@ -5,24 +5,24 @@ const loadData = async() =>{
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     const res = await fetch(url)
     const data = await res.json();
-    displayData(data.data.tools.slice(0,6));
+    displayData(data.data.tools.slice(0, 6));
 }
 
 const displayData = (datas) =>{
-    // console.log(datas)
+    console.log(datas.length)
     
     const dataContainer = document.getElementById('data-container')
     dataContainer.innerHTML = '';
     
     // Display 6 data only 
     const seeMore = document.getElementById('see-more')
-    if(datas.length >= 6){
-      seeMore.classList.remove('d-none')
-      console.log('ron')
+    if( datas.length <= 6){
+      //  datas = datas.slice(0, 6);
+       seeMore.classList.remove('d-none')
+       console.log('ron')
     }else{
       seeMore.classList.add('d-none')
       console.log('rimon')
-
     }
 
     
@@ -124,6 +124,8 @@ const showAllData = () =>{
   fetch(url)
   .then(res => res.json())
   .then(data => displayData(data.data.tools))
+  // loadData(6)
 }
+
 
 loadData()
