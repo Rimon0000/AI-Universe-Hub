@@ -95,8 +95,8 @@ const displayDetails = (data) =>{
     <div class="card h-100">
     <img src="${data.image_link[0]}" class="card-img-top modal-img" alt="...">
     <div class="card-body modal-div">
-      <h5 class="card-title">${data.input_output_examples[0] ? data.input_output_examples[0].input : "Can you give any example?"}</h5>
-      <p class="card-text">${data.input_output_examples[0] ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
+      <h5 class="card-title">${data.input_output_examples ? data.input_output_examples[0].input : "Can you give any example?"}</h5>
+      <p class="card-text">${data.input_output_examples ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
       <button class="btn btn-danger btn-accuracy ${data.accuracy.score? 'd-block': 'd-none'}">${data.accuracy.score * 100}% accuracy</button>
     </div>
     </div>
