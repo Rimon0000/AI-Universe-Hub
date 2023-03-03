@@ -58,14 +58,42 @@ const loadDetails =async id =>{
 }
 
 const displayDetails = (data) =>{
-    console.log(data)
+    console.log(data.accuracy.score)
     const dataDescription = document.getElementById('data-description')
     dataDescription.innerHTML = data.description ? data.description: "No Description";
     const pricing1 = document.getElementById('pricing-1')
     pricing1.innerHTML = data.pricing ? data.pricing[0].price : "Free of Cost/Basic";
+    const pricing2 = document.getElementById('pricing-2')
+    pricing2.innerHTML = data.pricing ? data.pricing[1].price : "Free of Cost/Pro";
+    const pricing3 = document.getElementById('pricing-3')
+    pricing3.innerHTML = data.pricing ? data.pricing[2].price : "Free of Cost/Enterprise";
 
+    const features1 = document.getElementById('features-1')
+    features1.innerHTML = data.features[1].feature_name;
+    const features2 = document.getElementById('features-2')
+    features2.innerHTML = data.features[2].feature_name;
+    const features3 = document.getElementById('features-3')
+    features3.innerHTML = data.features[3].feature_name;
 
+    const integrations1 = document.getElementById('integrations-1')
+    integrations1.innerHTML = data.integrations ? data.integrations[0] : "No data found";
+    const integrations2 = document.getElementById('integrations-2')
+    integrations2.innerHTML = data.integrations ? data.integrations[1] : "No data found";
+    const integrations3 = document.getElementById('integrations-3')
+    integrations3.innerHTML = data.integrations ? data.integrations[2] : "No data found";
 
+    const modalCard2 = document.getElementById('modal-card-2')
+    modalCard2.innerHTML = `
+    <div class="card h-100">
+    <img src="${data.image_link[0]}" class="card-img-top modal-img" alt="...">
+    <div class="card-body modal-div">
+      <h5 class="card-title">${data.input_output_examples[0] ? data.input_output_examples[0].input : "Can you give any example?"}</h5>
+      <p class="card-text">${data.input_output_examples[0] ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
+      <button class="btn btn-danger btn-accuracy">${data.accuracy.score * 100}% accuracy</button>
+      
+    </div>
+    </div>
+    `;
 
 }
 

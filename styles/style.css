@@ -11,3 +11,58 @@
     margin-top: 20px;
 }
 
+.modal-div{
+    background: rgba(235, 87, 87, 0.05);
+}
+
+.pricing-box{
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+#pricing-1{
+    text-align: center;
+    color: #03A30A;
+    font-weight: 700;
+    font-size: 16px;
+}
+#pricing-2{
+    text-align: center;
+    color: #03A30A;
+    font-weight: 700;
+    font-size: 16px;
+}
+#pricing-3{
+    text-align: center;
+    color: #EB5757;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.features{
+    color: #585858;
+    font-family: 'Work Sans';
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+}
+.integration{
+    align-items: center;
+    color: #585858;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.btn-accuracy{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 122px;
+    height: 29px;
+    align-items: center;
+    display: flex;
+    color: #FFFFFF;
+    font-size: 16px;
+}

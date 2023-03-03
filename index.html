@@ -24,53 +24,69 @@
     <section>
   
   <!-- Modal -->
-  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+  <div class="modal fade dialog modal-lg" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
 
             <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
+                <div class="col ">
                   <div class="card h-100">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
+                    <div class="card-body modal-div">
                       <h5 id="data-description" class="card-title">Card title</h5>
 
                         <div class="row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                               <div class="card">
-                                <div class="card-body">
+                                <div class="card-body pricing-box">
                                   <h6 id="pricing-1"></h6>
                                 </div>
                               </div>
                             </div>
                             <div class="col-sm-4">
                               <div class="card">
-                                <div class="card-body">
-                                  
+                                <div class="card-body pricing-box">
+                                  <h6 id="pricing-2"></h6>
                               </div>
                             </div>
                           </div>
                           <div class="col-sm-4">
                             <div class="card">
-                              <div class="card-body">
-                                <h6></h6>
+                              <div class="card-body pricing-box">
+                                <h6 id="pricing-3"></h6>
                             </div>
                           </div>
                         </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div>
+                            <h5 class="card-title">Features</h5>
+                            <ul>
+                             <li class="features" id="features-1"></li>
+                             <li class="features" id="features-2"></li>
+                             <li class="features" id="features-3"></li>
+                            </ul>
+                          </div>
+                          <div>
+                            <h5 class="card-title">Integrations</h5>
+                            <ul>
+                             <li class="integration" id="integrations-1"></li>
+                             <li class="integration" id="integrations-2"></li>
+                             <li class="integration" id="integrations-3"></li>
+                            </ul>
+                          </div>
+                        </div>
+
                     </div>
                   </div>
                 </div>
                 </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a short card.</p>
-                    </div>
-                  </div>
-                </div> 
+
+                <!-- modal card-2  -->
+                <div class="col" id="modal-card-2">
+              
+                 </div>
 
              </div>
         <div class="modal-footer">
