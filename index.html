@@ -11,12 +11,21 @@
   <body>
     <h1 class="text-center my-4">AI Universe Hub</h1>
 
+     <!-- loader/spinner  -->
+     <section id="loader" class="d-none">
+      <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+    </section>
+
     <section class="container">
         <div id="data-container" class="row row-cols-1 row-cols-md-3 g-4">
            
         </div>
         <div id="see-more" class="text-center d-none ">
-            <button id="btn-see-more" class="btn btn-primary">See More</button>
+            <button onclick="showAllData()" class="btn btn-primary">See More</button>
         </div>
     </section>
 

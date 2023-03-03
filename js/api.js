@@ -1,23 +1,31 @@
 const loadData = async() =>{
+     //spinner
+     toggleSpinner(true)
+  
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     const res = await fetch(url)
     const data = await res.json();
-    displayData(data.data.tools);
+    displayData(data.data.tools.slice(0,6));
 }
 
 const displayData = (datas) =>{
     // console.log(datas)
+    
     const dataContainer = document.getElementById('data-container')
     dataContainer.innerHTML = '';
+    
     // Display 6 data only 
-    const seeMore = document.getElementById('see-more');
-    if(datas.length > 6){
-        datas = datas.slice(0, 6);
-        seeMore.classList.remove('d-none')
+    const seeMore = document.getElementById('see-more')
+    if(datas.length >= 6){
+      seeMore.classList.remove('d-none')
+      console.log('ron')
+    }else{
+      seeMore.classList.add('d-none')
+      console.log('rimon')
+
     }
-    else{
-        seeMore.classList.add('d-none')
-    }
+
+    
     datas.forEach(data =>{
         // console.log(data)
         const dataDiv = document.createElement('div')
@@ -46,6 +54,8 @@ const displayData = (datas) =>{
     `;
     dataContainer.appendChild(dataDiv)
     })
+     //stop spinner or loader
+     toggleSpinner(false)
 }
 
 //load details
@@ -94,13 +104,26 @@ const displayDetails = (data) =>{
     </div>
     </div>
     `;
+}
 
+
+//spinner / loader
+const toggleSpinner = isLoading =>{
+  const loaderSection = document.getElementById('loader')
+  if(isLoading){
+      loaderSection.classList.remove('d-none')
+  }
+  else{
+      loaderSection.classList.add('d-none');
+  }
 }
 
 //show more
-document.getElementById('btn-see-more').addEventListener('click', function(){
-    // loadData();
-
-})
+const showAllData = () =>{
+  const url = `https://openapi.programming-hero.com/api/ai/tools`
+  fetch(url)
+  .then(res => res.json())
+  .then(data => displayData(data.data.tools))
+}
 
 loadData()
