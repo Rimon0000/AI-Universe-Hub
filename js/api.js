@@ -74,11 +74,11 @@ const displayDetails = (data) =>{
     const dataDescription = document.getElementById('data-description')
     dataDescription.innerHTML = data.description ? data.description: "No Description";
     const pricing1 = document.getElementById('pricing-1')
-    pricing1.innerHTML = data.pricing ? data.pricing[0].price : "Free of Cost/Basic";
+    pricing1.innerHTML = data.pricing ? `${data.pricing[0].price} ${data.pricing[0].plan}` : "Free of Cost/Basic";
     const pricing2 = document.getElementById('pricing-2')
-    pricing2.innerHTML = data.pricing ? data.pricing[1].price : "Free of Cost/Pro";
+    pricing2.innerHTML = data.pricing ? `${data.pricing[1].price} ${data.pricing[1].plan}` : "Free of Cost/Pro";
     const pricing3 = document.getElementById('pricing-3')
-    pricing3.innerHTML = data.pricing ? data.pricing[2].price : "Free of Cost/Enterprise";
+    pricing3.innerHTML = data.pricing ? `${data.pricing[2].price} ${data.pricing[2].plan}` : "Free of Cost/Enterprise";
 
     const features1 = document.getElementById('features-1')
     features1.innerHTML = data.features[1].feature_name;
@@ -99,7 +99,7 @@ const displayDetails = (data) =>{
     <div class="card h-100">
     <img src="${data.image_link[0]}" class="card-img-top modal-img" alt="...">
     <div class="card-body modal-div">
-      <h5 class="card-title">${data.input_output_examples ? data.input_output_examples[0].input : "Can you give any example?"}</h5>
+      <h4 class="card-title">${data.input_output_examples ? data.input_output_examples[0].input : "Can you give any example?"}</h4>
       <p class="card-text">${data.input_output_examples ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
       <button class="btn btn-danger btn-accuracy ${data.accuracy.score? 'd-block': 'd-none'}">${data.accuracy.score * 100}% accuracy</button>
     </div>

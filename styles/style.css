@@ -27,23 +27,20 @@
     background: #FFFFFF;
     border-radius: 16px;
 }
-#pricing-1{
+#pricing-1, #pricing-2{
     text-align: center;
     color: #03A30A;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 16px;
 }
-#pricing-2{
-    text-align: center;
-    color: #03A30A;
-    font-weight: 700;
-    font-size: 16px;
-}
+
 #pricing-3{
     text-align: center;
     color: #EB5757;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .features{
