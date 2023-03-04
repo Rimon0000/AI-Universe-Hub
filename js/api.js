@@ -28,7 +28,7 @@ const displayData = (datas) =>{
     }
 
     datas.forEach(data =>{
-        // console.log(data.published_in)
+        console.log(data)
         const dataDiv = document.createElement('div')
     dataDiv.classList.add('col')
     dataDiv.innerHTML = `
@@ -88,11 +88,11 @@ const displayDetails = (data) =>{
     features3.innerHTML = data.features[3].feature_name;
 
     const integrations1 = document.getElementById('integrations-1')
-    integrations1.innerHTML = data.integrations ? data.integrations[0] : "No data found";
+    integrations1.innerHTML = data.integrations && data.integrations[0] ? data.integrations[0] : "No data found";
     const integrations2 = document.getElementById('integrations-2')
-    integrations2.innerHTML = data.integrations ? data.integrations[1] : "No data found";
+    integrations2.innerHTML = data.integrations && data.integrations[1]  ? data.integrations[1] : "No data found";
     const integrations3 = document.getElementById('integrations-3')
-    integrations3.innerHTML = data.integrations ? data.integrations[2] : "No data found";
+    integrations3.innerHTML = data.integrations && data.integrations[2] ? data.integrations[2] : "No data found";
 
     const modalCard2 = document.getElementById('modal-card-2')
     modalCard2.innerHTML = `
