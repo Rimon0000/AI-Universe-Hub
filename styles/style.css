@@ -1,3 +1,11 @@
+.btn-sort{
+    font-family: 'Work Sans';
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 .btn-icon{
     border-radius: 58%;
     border: none;

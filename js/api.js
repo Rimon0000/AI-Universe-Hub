@@ -1,3 +1,5 @@
+let allData = [];
+
 const loadData = async() =>{
      //spinner
      toggleSpinner(true)
@@ -6,11 +8,13 @@ const loadData = async() =>{
     const res = await fetch(url)
     const data = await res.json();
     displayData(data.data.tools.slice(0, 6));
+    allData = data.data.tools;
+
 }
 
 const displayData = (datas) =>{
-    console.log(datas.length)
-    
+    // console.log(datas)
+
     const dataContainer = document.getElementById('data-container')
     dataContainer.innerHTML = '';
     
@@ -23,9 +27,8 @@ const displayData = (datas) =>{
       seeMore.classList.add('d-none')
     }
 
-    
     datas.forEach(data =>{
-        // console.log(data)
+        // console.log(data.published_in)
         const dataDiv = document.createElement('div')
     dataDiv.classList.add('col')
     dataDiv.innerHTML = `
@@ -55,6 +58,7 @@ const displayData = (datas) =>{
      //stop spinner or loader
      toggleSpinner(false)
 }
+
 
 //load details
 const loadDetails =async id =>{
@@ -104,9 +108,6 @@ const displayDetails = (data) =>{
 }
 
 
-//accuracy
-
-
 
 //spinner / loader
 const toggleSpinner = isLoading =>{
@@ -128,5 +129,13 @@ const showAllData = () =>{
   // loadData(6)
 }
 
+
+//sorting
+const sortByDateBtn = () =>{
+  const data = allData;
+  // console.log(allData)
+  data.sort((a,b) => new Date(b.published_in) - new Date(a.published_in))
+  displayData(allData, true)
+}
 
 loadData()
