@@ -28,7 +28,7 @@ const displayData = (datas) =>{
     }
 
     datas.forEach(data =>{
-        console.log(data)
+        // console.log(data.features)
         const dataDiv = document.createElement('div')
     dataDiv.classList.add('col')
     dataDiv.innerHTML = `
