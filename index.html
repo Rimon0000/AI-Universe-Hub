@@ -10,6 +10,8 @@
   </head>
   <body>
     <h1 class="text-center my-4">AI Universe Hub</h1>
+
+    <!-- sort by date  -->
     <section>
       <div class="text-center mb-5">
         <button onclick="sortByDateBtn()" id="sorting-data" class="btn btn-danger btn-sort ">Sort By Date</button>
@@ -25,6 +27,7 @@
         </div>
     </section>
 
+    <!-- see more data  -->
     <section class="container">
         <div id="data-container" class="row row-cols-1 row-cols-md-3 g-4">
            
@@ -36,7 +39,6 @@
 
     <!-- modal  -->
     <section>
-  
   <!-- Modal -->
   <div class="modal fade dialog modal-lg" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -100,9 +102,7 @@
                 <!-- modal card-2  -->
                 <div class="col" id="modal-card-2">
                   <!-- <button id="btn-accuracy" class="btn btn-danger btn-accuracy ">${data.accuracy.score * 100}% accuracy</button> -->
-              
-                 </div>
-
+                </div>
              </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary modal-close-btn" data-bs-dismiss="modal">X</button>
@@ -111,7 +111,7 @@
     </div>
   </div>
 
-    </section>
+  </section>
 
 
     <script src="js/api.js"></script>
